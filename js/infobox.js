@@ -29,6 +29,10 @@ class InfoBox {
             // Converts the abbreviated country name to the actual country name
             let goodName = that.data["population"].filter(d => d.geo === activeCountry.toLowerCase());
 
+            if (goodName[0]["country"] === "USA") {
+                goodName[0]["country"] = "United States";
+            }
+
             // Selects the current country
             let selectedCountry = that.data["countries"].filter(d => d.Country === goodName[0]["country"]);
 
